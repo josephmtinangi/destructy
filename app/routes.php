@@ -41,7 +41,9 @@ $app->get('/messages/{hash}', function ($request, $response, $args) {
 	$message = $this->db->prepare("
 		SELECT body 
 		FROM messages
-		WHERE hash = :hash
+		WHERE hash = :hash;
+		DELETE FROM messages
+		WHERE hash = :hash;
 	");
 
 	$message->execute([
