@@ -20,6 +20,18 @@ $app->post('/post', function($request, $response, $args) use ($app) {
 		'body' => $params['body'],
 	]);
 
+
+	$this->mail->messages()->send($this->config->get('services.mailgun.domain'), [
+	  'from'    => 'noreply@destructy.rf.gd',
+	  'to'      => 'josephmtinangi@gmail.com',
+	  'subject' => 'New message from Destructy',
+	  'html'    => $this->view->fetch('emails/message.twig', [
+	  	'hash' => $hash,
+	  ]),
+	]);
+
+	echo 'Sent';	
+
 	// TODO: Use Slim to redirect
 	return $response->withRedirect('/');
 
