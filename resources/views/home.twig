@@ -2,7 +2,12 @@
 
 {% block content %}
     <div class="row">
-    	<div class="col-md-6 col-md-offset-3">
+        <div class="col-md-3">
+            <div class="well">
+                <p>This message will self destruct as soon as the recepient reads it.</p>
+            </div>
+        </div>
+    	<div class="col-md-6">
     		<div class="panel panel-default">
     			<div class="panel-body">
     				<form action="{{ path_for('send') }}" method="post" autocomplete="off">
@@ -20,5 +25,12 @@
     			</div>
     		</div>
     	</div>
+        <div class="col-md-3">
+            <div class="well">
+                <h3>About</h3>
+                <p>Developer: <a href="https://github.com/josephmtinangi">Joseph Mtinangi</a></p>
+                <p>Source code <a href="https://github.com/josephmtinangi/destructy">Github</a></p>
+            </div>
+        </div>
     </div>
 {% endblock %}
