@@ -1,5 +1,9 @@
 <p>You have a new self destructing message from Destructy</p>
 
-<p>URL {{ hash }}</p>
+<p>
+	<a href="{{ base_url() }}{{ path_for('messages.show', {'hash': hash}) }}">
+		{{ base_url() }}{{ path_for('messages.show', {'hash': hash}) }}
+	</a>
+</p>
 
 <p>Thanks, <br>Destructy</p>
