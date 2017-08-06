@@ -15,6 +15,7 @@
         "mailgun/mailgun-php": "^2.3",
         "php-http/curl-client": "^1.7",
         "guzzlehttp/psr7": "^1.4",
-        "josegonzalez/dotenv": "^3.1"
+        "josegonzalez/dotenv": "^3.1",
+        "slim/flash": "^0.2.0"
     }
 }
