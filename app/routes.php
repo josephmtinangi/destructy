@@ -1,5 +1,5 @@
 <?php
 
-$app->get('/', function($request, $response, $args) {
+$app->get('/home', function($request, $response, $args) {
     echo 'Home';    
 });
