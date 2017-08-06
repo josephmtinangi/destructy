@@ -10,4 +10,10 @@ return [
             'password' => ''
         ],    
     ],
+    'services' => [
+    	'mailgun' => [
+    		'domain' => '',
+    		'secret' => ''
+    	]
+    ],
 ];
