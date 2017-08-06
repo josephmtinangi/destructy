@@ -8,6 +8,12 @@ $container['config'] = function($c) {
   return new \Noodlehaus\Config('../config/app.php');  
 };
 
+$container['flash'] =  function($c) {
+    session_start();
+    
+    return new \Slim\Flash\Messages();
+};
+
 $container['view'] = function($c) {
     $view = new \Slim\Views\Twig('../resources/views');
     
@@ -16,6 +22,8 @@ $container['view'] = function($c) {
         $c['config']->get('url')
     ));
     
+    $view->getEnvironment()->addGlobal('flash', $c['flash']);
+
     return $view;
 };
 

@@ -30,8 +30,7 @@ $app->post('/post', function($request, $response, $args) use ($app) {
 	  ]),
 	]);
 
-	echo 'Sent';	
-
+	$this->flash->addMessage('global', 'Message Sent!');
 	// TODO: Use Slim to redirect
 	return $response->withRedirect('/');
 
