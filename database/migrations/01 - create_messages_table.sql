@@ -1,0 +1,7 @@
+CREATE TABLE messages (
+	id INT(11) PRIMARY KEY auto_increment,
+	hash VARCHAR(255),
+	body TEXT,
+	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
