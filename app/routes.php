@@ -36,3 +36,21 @@ $app->post('/post', function($request, $response, $args) use ($app) {
 	return $response->withRedirect('/');
 
 })->setName('send');
+
+$app->get('/messages/{hash}', function ($request, $response, $args) {
+	$message = $this->db->prepare("
+		SELECT body 
+		FROM messages
+		WHERE hash = :hash
+	");
+
+	$message->execute([
+		'hash' => $args['hash'],
+	]);
+
+	$message = $message->fetch(PDO::FETCH_OBJ);
+
+	$this->view->render($response, 'messages/show.twig', [
+		'message' => $message,
+	]);
+})->setName('messages.show');
