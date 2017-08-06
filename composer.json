@@ -1,0 +1,14 @@
+{
+    "name": "josephmtinangi/destructy",
+    "description": "A Self destruct message application",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Joseph Mtinangi",
+            "email": "josephmtinangi@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^3.0"
+    }
+}
