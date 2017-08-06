@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'url' => '',
+    'url' => 'http://localhost',
     'db'  => [
         'mysql' => [
             'host'     => '127.0.0.1',
