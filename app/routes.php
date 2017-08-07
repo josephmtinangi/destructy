@@ -21,27 +21,15 @@ $app->post('/post', function ($request, $response, $args) use ($app) {
     ]);
 
     // send mail
-    $this->mail->messages()->send($this->config->get('services.mailgun.domain'), [
-        'from' => 'noreply@destructy.rf.gd',
-        'to' => 'josephmtinangi@gmail.com',
-        'subject' => 'New message from Destructy',
-        'html' => $this->view->fetch('emails/message.twig', [
-            'hash' => $hash,
-        ]),
-    ]);
-
-    $this->phpmailer->addAddress('noreply@destructy.rf.gd', 'Joseph');
+    $this->phpmailer->addAddress($params['email'], '');
     $this->phpmailer->Subject = 'New message from Destructy';
     $this->phpmailer->Body = $this->view->fetch('emails/message.twig', ['hash' => $hash]);
 
     if (!$this->phpmailer->send()){
-        echo 'Message could not be sent.!';
-        echo 'Mailer Error: ' . $this->phpmailer->ErrorInfo;
+        $this->flash->addMessage('global', 'Message failed to be sent to ' . $params['email']);
     }else{
-        echo 'Message has been sent';
+        $this->flash->addMessage('global', 'Message successfully sent to ' . $params['email']);
     }    
-
-    $this->flash->addMessage('global', 'Message Sent!');
     // TODO: Use Slim to redirect
     return $response->withRedirect('/');
 
