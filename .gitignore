@@ -3,3 +3,4 @@ php.ini
 .env
 *.log
 sftp-config.json
+.idea
