@@ -22,6 +22,15 @@ return [
     	'mailgun' => [
     		'domain' => $_ENV['MAILGUN_DOMAIN'],
     		'secret' => $_ENV['MAILGUN_SECRET'],
-    	]
+    	],
+        'smtp2go' => [
+            'host' => $_ENV['SMTP2GO_HOST'],
+            'username' => $_ENV['SMTP2GO_USERNAME'],
+            'password' => $_ENV['SMTP2GO_PASSWORD'],
+            'secure' => $_ENV['SMTP2GO_SECURE'],
+            'port' => $_ENV['SMTP2GO_PORT'],
+            'from' => $_ENV['SMTP2GO_FROM'],
+            'fromName' => $_ENV['SMTP2GO_FROM_NAME'],
+        ],
     ],
 ];
