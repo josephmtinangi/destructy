@@ -2,6 +2,10 @@
 
 Self destructing message application
 
+Here is the working demo
+
+[http://destructy.rf.gd](http://destructy.rf.gd)
+
 ## About the app
 
 This app allows you to send a message to any email address. 
