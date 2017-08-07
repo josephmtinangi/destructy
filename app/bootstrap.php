@@ -38,6 +38,27 @@ $container['mail'] = function ($c) {
     return \Mailgun\Mailgun::create($c['config']->get('services.mailgun.secret'));
 };
 
+$container['phpmailer'] = function ($c) {
+    $mail = new PHPMailer();
+    $mail->isSMTP();
+    // $mail->SMTPDebug = 2;
+    $mail->Host = $c['config']->get('services.smtp2go.host');
+    $mail->SMTPAuth = true;
+    $mail->Username = $c['config']->get('services.smtp2go.username');
+    $mail->Password = $c['config']->get('services.smtp2go.password');
+    $mail->SMTPSecure = $c['config']->get('services.smtp2go.secure');
+    $mail->Port = $c['config']->get('services.smtp2go.port');
+
+    $mail->isHTML(true);
+
+    $mail->setFrom(
+       $c['config']->get('services.smtp2go.from') , 
+       $c['config']->get('services.smtp2go.fromName')
+    );  
+
+    return $mail;
+};
+
 $app = new \Slim\App($container);
 
 require_once "routes.php";
