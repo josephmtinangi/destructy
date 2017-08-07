@@ -16,6 +16,7 @@
         "php-http/curl-client": "^1.7",
         "guzzlehttp/psr7": "^1.4",
         "josegonzalez/dotenv": "^3.1",
-        "slim/flash": "^0.2.0"
+        "slim/flash": "^0.2.0",
+        "phpmailer/phpmailer": "^5.2"
     }
 }
